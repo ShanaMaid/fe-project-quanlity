@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>addEventListener 监控异常</title>
+</head>
+<body>
+  <img src="./404.png" />
+
+</body>
+<script>
+  window.addEventListener('error', (e) => {
+    e.preventDefault()
+    const { message, filename, lineno, colno, error, target } = e;
+    if (e instanceof ErrorEvent) {
+      console.log('js 报错')
+      console.log('报错信息:', message);
+      console.log('错误文件地址:', filename);
+      console.log('错误文件行数:', lineno);
+      console.log('错误文件列数:', colno);
+      console.log('错误堆栈:', error);
+    } else {
+      console.log('资源加载报错')
+      console.log('资源加载失败标签:', target.nodeName);
+      console.log('资源记地址:', target.src);
+    }
+  }, true);
+
+  function throwError() {
+    throw new Error('错误');
+  }
+
+  throwError();
+</script>
+</html>

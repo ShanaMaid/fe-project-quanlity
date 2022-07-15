@@ -1,0 +1,9 @@
+// NOTE: ....
+function foo1() {};
+/**
+ * OPTIMIZE: ....
+ */
+function foo2() {};
+/** TODO: .... */
+function foo3() {};
+function foo4() {}; // HACK: ....

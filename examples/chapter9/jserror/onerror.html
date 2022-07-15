@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>window.onerror 监控异常</title>
+</head>
+<body>
+  <img src="./404.png" onerror="console.log('错误')" />
+</body>
+<script>
+  window.onerror = (message, source, lineno, colno, error) => {
+    console.log('报错信息:', message);
+    console.log('错误文件地址:', source);
+    console.log('错误文件行数:', lineno);
+    console.log('错误文件列数:', colno);
+    console.log('错误堆栈:', error);
+    // 返回 true，阻止执行默认事件处理函数，控制台不会再默认打印错误信息
+    return true;
+  };
+
+  function throwError() {
+    throw new Error('错误');
+  }
+
+  throwError();
+</script>
+</html>

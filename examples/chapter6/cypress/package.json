@@ -1,0 +1,23 @@
+{
+  "name": "fe-project-quanlity",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "cypress": "cypress open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShanaMaid/fe-project-quanlity.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ShanaMaid/fe-project-quanlity/issues"
+  },
+  "homepage": "https://github.com/ShanaMaid/fe-project-quanlity#readme",
+  "devDependencies": {
+    "@cypress/webpack-dev-server": "^1.7.0",
+    "cypress": "^8.7.0"
+  }
+}

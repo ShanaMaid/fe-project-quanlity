@@ -1,0 +1,1 @@
+(function(o){"use strict";var c;void 0===c&&(c=function(){}),c.p=""}).call(this||window,window.__wpcc=window.__wpcc||{}),function(o){"use strict";alert("Hello, New user");for(var c=0,w=0;1e4>w;w++)console.log(w),c++;conosle.log(c)}.call(this||window,window.__wpcc=window.__wpcc||{});

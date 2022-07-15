@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>白屏监控</title>
+</head>
+
+<body>
+  <div id="main"><img id="img" src="./404.png" /></div>
+</body>
+<script src="./monitor.js"></script>
+<script>
+  // 选择需要观察变动的节点
+  const targetNode = document.getElementById('main');
+  const img = document.getElementById('img');
+
+
+  // 观察器的配置（需要观察什么变动）
+  const config = {
+    attributes: true,
+    childList: true,
+    subtree: true
+  };
+
+  // 当观察到变动时执行的回调函数
+  const callback = function (mutationsList, observer) {
+    let shouldCheck = false;
+    for (let mutation of mutationsList) {
+      if (mutation.type === 'attributes' || mutation.removedNodes) {
+        shouldCheck = true;
+        break;
+      }
+    }
+    const isWhiteScreen = hasValidElement(targetNode);
+    if (!isWhiteScreen) {
+      console.log('白屏')
+    }
+  };
+
+  // 创建一个观察器实例并传入回调函数
+  const observer = new MutationObserver(callback);
+
+  // 以上述配置开始观察目标节点
+  observer.observe(document.body, config);
+
+  // 模拟 2s 后发生白屏
+  setTimeout(() => {
+    document.body.removeChild(targetNode);
+  }, 2000);
+</script>
+
+</html>

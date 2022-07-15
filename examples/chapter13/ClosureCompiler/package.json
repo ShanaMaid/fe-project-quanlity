@@ -1,0 +1,19 @@
+{
+  "name": "13rd",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "webpack": "^4.0.0"
+  },
+  "devDependencies": {
+    "closure-webpack-plugin": "^2.5.0",
+    "google-closure-compiler": "^20211006.0.0",
+    "webpack-cli": "^4.9.0"
+  }
+}

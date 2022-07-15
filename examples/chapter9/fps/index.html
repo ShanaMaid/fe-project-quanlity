@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>模拟卡顿</title>
+</head>
+
+<body>
+</body>
+<script>
+  const longTask = (time) => {
+    let start = Date.now();
+    while (true) {
+      const end = Date.now();
+      if (end - start > time) {
+        break;
+      }
+    }
+  };
+  const start = Date.now(); // 记录起始时间
+
+  console.log('创建定时任务'); // 开始执行：
+  requestAnimationFrame(() => {
+    console.log('定时任务执行完毕，时间偏移量:', Date.now() - start, 'ms');
+  }, 100);
+
+  longTask(1000); // 创建 1000ms 的长任务
+
+</script>
+
+</html>

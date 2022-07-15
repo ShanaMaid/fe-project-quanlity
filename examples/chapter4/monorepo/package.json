@@ -1,0 +1,22 @@
+{
+  "name": "fe-project-quanlity",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShanaMaid/fe-project-quanlity.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ShanaMaid/fe-project-quanlity/issues"
+  },
+  "homepage": "https://github.com/ShanaMaid/fe-project-quanlity#readme",
+  "dependencies": {
+    "gitbook-cli": "^2.3.2"
+  }
+}

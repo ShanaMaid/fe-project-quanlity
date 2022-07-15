@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>标记过滤</title>
+</head>
+<body>
+  <button id="normal-child">添加正常后代标签</button>
+  <button id="normal">添加正常标签</button>
+  <button id="abnormal">添加异常标签</button>
+  <div id="normal-container" style="background: red" data-safe="true">正常容器</div>
+</body>
+<script>
+  const normalConatiner = document.getElementById('normal-container');
+  const _appendChild = Element.prototype.appendChild;
+
+  Element.prototype.appendChild = function (node) {
+    // 是否为正常容器的后代标签
+    const isSafeChild = normalConatiner.contains(node);
+    // 是否有正确的自定义 data-safe 属性
+    const hasRightDataSafe = node.getAttribute('data-safe') === 'true';
+    if (normalConatiner.contains(node) || hasRightDataSafe) {
+      // 执行原方法
+      _appendChild.apply(this, arguments)
+    } else {
+      // 插入标签非法，直接结束执行
+      return;
+    }
+  };
+
+  document.getElementById('normal-child').onclick = () => {
+    const dom = document.createElement('div');
+    dom.setAttribute('data-safe', 'true');
+    dom.innerText = `正常后代标签-${Math.random()}`
+    normalConatiner.appendChild(dom);
+  };
+
+  document.getElementById('normal').onclick = () => {
+    const dom = document.createElement('div');
+    dom.setAttribute('data-safe', 'true');
+    dom.innerText = `正常标签-${Math.random()}`
+    document.body.appendChild(dom);
+  };
+
+  document.getElementById('abnormal').onclick = () => {
+    const dom = document.createElement('div');
+    dom.innerText = `异常标签-${Math.random()}`
+    document.body.appendChild(dom);
+  };
+</script>
+</html>

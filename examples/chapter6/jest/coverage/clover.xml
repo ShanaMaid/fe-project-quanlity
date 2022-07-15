@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1636016704092" clover="3.2.0">
+  <project timestamp="1636016704092" name="All files">
+    <metrics statements="15" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="8" elements="23" coveredelements="20" complexity="0" loc="15" ncloc="15" packages="1" files="4" classes="4"/>
+    <file name="add.ts" path="/Users/shana/Desktop/github/fe-project-quanlity/examples/第6章 测试保障/jest/add.ts">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="2" count="1" type="stmt"/>
+    </file>
+    <file name="api.ts" path="/Users/shana/Desktop/github/fe-project-quanlity/examples/第6章 测试保障/jest/api.ts">
+      <metrics statements="7" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="3" count="1" type="stmt"/>
+      <line num="4" count="1" type="stmt"/>
+      <line num="5" count="0" type="stmt"/>
+      <line num="8" count="1" type="stmt"/>
+      <line num="9" count="1" type="stmt"/>
+      <line num="10" count="0" type="stmt"/>
+    </file>
+    <file name="person.ts" path="/Users/shana/Desktop/github/fe-project-quanlity/examples/第6章 测试保障/jest/person.ts">
+      <metrics statements="4" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="3" count="1" type="stmt"/>
+      <line num="4" count="1" type="stmt"/>
+      <line num="5" count="0" type="stmt"/>
+    </file>
+    <file name="substract.ts" path="/Users/shana/Desktop/github/fe-project-quanlity/examples/第6章 测试保障/jest/substract.ts">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="2" count="1" type="stmt"/>
+    </file>
+  </project>
+</coverage>

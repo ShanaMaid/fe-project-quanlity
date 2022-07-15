@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>模拟卡顿</title>
+</head>
+
+<body>
+  <button onclick="randomLongTask()" style="position: absolute; top: 100px">随机创建 0 ~ 1000ms 的 长任务</button>
+</body>
+<script>
+  const longTask = (time) => {
+    let start = Date.now();
+    while (true) {
+      const end = Date.now();
+      if (end - start > time) {
+        break;
+      }
+    }
+  };
+
+  function calcFPS() {
+    let tasks = [Date.now()];
+    let startTime = Date.now();
+
+    const loop = () => {
+      setTimeout(() => {
+        const current = Date.now();
+        tasks.push(current);
+        tasks = tasks.filter(_ => (current - _ <= 1000));
+        const time = (tasks[tasks.length - 1] - tasks[0]);
+        if (current - startTime > 1000) { // 每秒打印一次 FPS
+          // time 为 0 时，代表过去 1s 内没有任何定时任务创建，即 fps 为 0
+          console.log('当前 FPS:', time ? parseInt((tasks.length / time) * 1000) : 0);
+          startTime = Date.now();
+        }
+        loop();
+      }, 1000 / 60)
+    };
+
+    loop();
+  };
+  calcFPS();
+
+  function randomLongTask() {
+    const time = parseInt(1000 * Math.random());
+    console.log('创建了', time, 'ms 的长任务，FPS');
+    longTask(time)
+  }
+</script>
+
+</html>

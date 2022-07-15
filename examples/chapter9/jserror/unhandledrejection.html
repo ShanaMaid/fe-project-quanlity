@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>异步错误监控</title>
+</head>
+<body>
+</body>
+<script>
+  const parseStack = (stack) => {
+  const results = stack.split('\n');
+  const topFile = results[1].trim().split(' ')[1];
+  const regResults = topFile.match(/(.*)?\:(\d+)\:(\d+)$/);
+  const [, filename, lineno, colno] = regResults;
+  return { filename, lineno: +lineno, colno: +colno };
+};
+  new Promise((resolve, reject) => {
+    referenceError
+  });
+ 
+  window.addEventListener('unhandledrejection', (e) => {
+    console.log('报错信息:', e.reason.message);
+    const { filename, lineno, colno} = parseStack(e.reason.stack);
+    console.log('错误文件地址:', filename);
+    console.log('错误文件行数:', lineno);
+    console.log('错误文件列数:', colno);
+    console.log('错误堆栈:', e.reason.stack);
+  }, true);
+</script>
+</html>

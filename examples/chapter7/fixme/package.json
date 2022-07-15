@@ -1,0 +1,14 @@
+{
+  "name": "fixme-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "scan": "node fixme.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fixme": "^0.6.0"
+  }
+}

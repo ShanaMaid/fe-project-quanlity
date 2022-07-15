@@ -1,0 +1,17 @@
+/*!**************!*\
+  !*** ./a.js ***!
+  \**************/
+
+/*! exports provided: foo, bar */
+
+/*! exports used: foo */
+
+/*!**************!*\
+  !*** ./b.js ***!
+  \**************/
+
+/*! no exports provided */
+
+/*! all exports used */
+
+/*! ./a.js */
